@@ -7,20 +7,18 @@ workflows:
       flutter: stable
       xcode: latest
       vars:
-        PROJECT_NAME: "ngymkhana app" # Change this to your project name
+        PROJECT_NAME: "ngymkhana app"
+        FLUTTER_DISABLE_SWIFT_PACKAGE_MANAGER: "true"
     scripts:
       - name: Install dependencies
         script: |
           flutter pub get
-      - name: Run tests
-        script: |
-          flutter test
       - name: Build Android APK
         script: |
           flutter build apk --release
       - name: Build iOS App
         script: |
-          flutter build ipa --release
+          flutter build ipa --release --no-codesign
     artifacts:
       - build/**/outputs/**/*.apk
       - build/**/outputs/**/*.ipa

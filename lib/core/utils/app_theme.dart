@@ -153,7 +153,7 @@ class AppTheme {
       ),
 
       // Dialog theme
-      dialogTheme: DialogTheme(
+      dialogTheme: DialogThemeData(
         backgroundColor: Colors.white,
         elevation: 8,
         shape: RoundedRectangleBorder(
@@ -395,7 +395,7 @@ class AppTheme {
       ),
 
       // Dialog theme
-      dialogTheme: DialogTheme(
+      dialogTheme: DialogThemeData(
         backgroundColor: AppKolors.darkSurface,
         elevation: 8,
         shape: RoundedRectangleBorder(

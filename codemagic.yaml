@@ -12,10 +12,11 @@ workflows:
     scripts:
       - name: Install dependencies
         script: |
+          flutter config --no-enable-swift-package-manager
           flutter pub get
       - name: Build Android APK
         script: |
-          flutter build apk --release
+          flutter build apk --release --verbose 2>&1 | tail -100
       - name: Build iOS App
         script: |
           flutter build ipa --release --no-codesign

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "314035904156",
+    "project_id": "nrbgymkhanaapp",
+    "storage_bucket": "nrbgymkhanaapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314035904156:android:6743f966ce112b41a0d759",
+        "android_client_info": {
+          "package_name": "com.nairobigymkhana.nrbgymkhana"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTuJDlwm0qji5rAAQ_33rrN1ph3B7Zbvc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,30 @@
+workflows:
+  flutter-app:
+    name: Flutter App Build
+    max_build_duration: 120
+    instance_type: mac_mini_m1
+    environment:
+      flutter: stable
+      xcode: latest
+      vars:
+        PROJECT_NAME: "ngymkhana app" # Change this to your project name
+    scripts:
+      - name: Install dependencies
+        script: |
+          flutter pub get
+      - name: Run tests
+        script: |
+          flutter test
+      - name: Build Android APK
+        script: |
+          flutter build apk --release
+      - name: Build iOS App
+        script: |
+          flutter build ipa --release
+    artifacts:
+      - build/**/outputs/**/*.apk
+      - build/**/outputs/**/*.ipa
+    publishing:
+      email:
+        recipients:
+          - "dafobnito@gmail.com"

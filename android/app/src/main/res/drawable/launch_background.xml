@@ -1,0 +1,28 @@
+Hey Tony, I need a prototype of a microservices-based inventory management system that is scalable, modular, and fault-tolerant, applying Gang of Four (GoF) design patterns.
+
+Key Requirements:
+	1.	Core Microservices:
+	•	Inventory Tracking Service – Monitors stock levels, updates inventory, triggers alerts.
+	•	Supplier Management Service – Manages suppliers and restocking.
+	•	Order Processing Service – Handles orders, updates inventory, and processes payments.
+	•	Reporting Service – Generates reports on inventory, sales, and supplier performance.
+	2.	Microservices Architecture:
+	•	Each service operates independently with its own database.
+	•	Services communicate via REST APIs or asynchronous message queues (RabbitMQ/Kafka).
+	•	Scalability & Fault Tolerance – Failures in one service shouldn’t disrupt others.
+	3.	GoF Design Patterns to Apply:
+	•	Singleton – For shared configurations like API gateways.
+	•	Factory – For creating orders, inventory alerts, supplier requests.
+	•	Observer – Notifies reporting service when inventory updates.
+	•	Strategy – Different restocking strategies based on demand.
+	4.	Tech Stack:
+	•	Backend: Java (Spring Boot) preferred.
+	•	Frontend: Basic admin panel (React.js/Angular).
+	•	Database: MySQL (Orders), MongoDB (Inventory).
+	•	Message Broker: RabbitMQ/Kafka.
+	•	API Gateway: Kong or AWS API Gateway.
+
+Project Deliverables:
+	•	Code hosted on GitHub with setup instructions.
+	•	Architecture & Design Documentation.
+	•	System Demo showing scalability, fault tolerance, and modularity.

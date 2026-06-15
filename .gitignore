@@ -1,0 +1,100 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Android Gradle build cache
+android/.gradle/
+android/app/build/
+android/app/.cxx/
+android/build/
+
+# iOS build
+ios/Pods/
+ios/.symlinks/
+
+# macOS build
+macos/Pods/
+
+# Node / Firebase functions
+functions/node_modules/
+server/node_modules/
+receipt_monitor/
+receipt_monitor.rar
+
+# Sensitive files - NEVER commit these
+server/.env
+server/serviceAccountKey.json
+**/serviceAccountKey.json
+**/*.env
+assets/apis/service_account.json
+assets/apis/googlecalendar.json
+
+# Large binaries / junk files not needed in repo
+*.exe
+*.zip
+*.rar
+*.dll
+*.sys
+*.dat
+*.mov
+*.docx
+*.pdf
+assets/Photos/
+assets/Annual*
+assets/MALINE*
+assets/images/rechargescreen/ZKTime*
+assets/images/rechargescreen/ZKAccess*
+assets/images/rechargescreen/Advanced*
+assets/images/rechargescreen/ipscan*
+assets/images/rechargescreen/netsetman*
+assets/brave_screenshot*
+assets/apis/brave_screenshot*
+
+# Crash logs
+android/hs_err_pid*.log
+android/replay_pid*.log
+
+# Android local config
+android/local.properties

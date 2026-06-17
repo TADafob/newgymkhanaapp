@@ -20,10 +20,16 @@ workflows:
       - name: Build iOS App
         script: |
           flutter build ipa --release --no-codesign
+          # Locate and move the ipa if Flutter placed it elsewhere
+          find build/ios -name "*.ipa" 2>/dev/null || echo "No ipa found, checking archive..."
+          ls -la build/ios/ 2>/dev/null || true
+          ls -la build/ios/ipa/ 2>/dev/null || true
+          ls -la build/ios/archive/ 2>/dev/null || true
     artifacts:
       - build/**/outputs/**/*.apk
       - build/ios/archive/*.xcarchive
       - build/ios/ipa/*.ipa
+      - "**/*.ipa"
     publishing:
       email:
         recipients:

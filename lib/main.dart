@@ -15,6 +15,7 @@ import 'package:nrbgymkhana/core/utils/connectivityawarewidget.dart';
 import 'package:nrbgymkhana/features/NotificationsandMessaging/presentation/widgets/notification_overlay_service.dart';
 import 'package:nrbgymkhana/features/common/sharedpreff/localstorage.dart';
 import 'package:nrbgymkhana/features/home/presentation/widgets/theme_provider.dart';
+import 'package:nrbgymkhana/firebase_options.dart';
 import 'package:nrbgymkhana/routes.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
@@ -31,7 +32,7 @@ final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
 @pragma('vm:entry-point')
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   try {
-    await Firebase.initializeApp();
+    await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
     debugPrint('🔔 Background message received: ${message.messageId}');
 
     // Initialize plugin for background context
@@ -93,7 +94,7 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   // Configure image caching
   final tempDir = await getTemporaryDirectory();
@@ -152,9 +153,9 @@ Future<void> main() async {
   await androidImpl?.createNotificationChannel(bookingChannel);
   await androidImpl?.createNotificationChannel(cardChannel);
 
-  // Request FCM permissions & print token
+  // Request FCM permissions & print token (non-blocking on iOS)
   await _requestFirebaseMessagingPermissions();
-  await _printDeviceToken();
+  _printDeviceToken(); // intentionally not awaited — getToken() can hang on iOS without APNs
 
   // Configure EasyLoading
   configLoading();
